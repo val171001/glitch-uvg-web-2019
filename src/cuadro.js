@@ -1,22 +1,21 @@
 import React from 'react';
-import Title from './title/index.js';
-import Robot from './Robot.js';
-import DataInfo from './DataInfo.js';
-import DiscButton from './button-dist/index.js';
+import Title from './title/index';
+import Robot from './Robot';
+import DataInfo from './DataInfo';
+import DiscButton from './button-dist/index';
+
 require('./cuadro.css');
 
-export default class Cuadro extends React.Component{
-  render(){
-    return(
-      <div class="cuadro">
-        <div class="imagen">
-            <Robot />
-            <Title />
-            <DataInfo />
-            <DiscButton />
-            
-        </div>
-    </div>
-    )
-  }
+export default function Cuadro() {
+  return React.cloneElement(
+    <div className="cuadro">
+      <div className="imagen">
+        <Robot />
+        <Title />
+        <DataInfo />
+        <DiscButton />
+
+      </div>
+    </div>,
+  );
 }

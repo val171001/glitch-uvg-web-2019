@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
 
-export default class Background extends Component {
-  render() {
-    return (
-      <div className="background">{this.props.children}</div>
-    )
-  }
+function Background(props) {
+  const { children } = props;
+  return (<div className="background">{ children }</div>);
 }
+
+Background.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+export default Background;
